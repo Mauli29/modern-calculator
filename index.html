@@ -5,110 +5,25 @@
   <title>Modern Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #2563eb, #1e40af);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Calculator Container */
-    .calculator {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 20px;
-      width: 320px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-      animation: slideUp 0.8s ease;
-    }
-
-    /* Display */
-    .display input {
-      width: 100%;
-      height: 70px;
-      background: rgba(0,0,0,0.25);
-      border: none;
-      border-radius: 12px;
-      color: #fff;
-      font-size: 30px;
-      padding: 15px;
-      text-align: right;
-      margin-bottom: 15px;
-    }
-
-    /* Buttons Grid */
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    button {
-      height: 60px;
-      border: none;
-      border-radius: 14px;
-      font-size: 20px;
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
-      transition: all 0.25s ease;
-    }
-
-    button:hover {
-      transform: scale(1.06);
-      background: rgba(255, 255, 255, 0.35);
-    }
-
-    /* Operators */
-    .operator {
-      background: #3b82f6;
-    }
-
-    .operator:hover {
-      background: #2563eb;
-    }
-
-    /* Equal Button */
-    .equal {
-      background: #22c55e;
-    }
-
-    .equal:hover {
-      background: #16a34a;
-    }
-
-    /* Zero Button */
-    .zero {
-      grid-column: span 2;
-    }
-
-    /* Animation */
-    @keyframes slideUp {
-      from {
-        transform: translateY(40px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-  </style>
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h1>Modern Calculator – Group Project</h1>
+    <p class="credits">
+      Project Guide & Lead Developer: <strong>Mauli</strong> |
+      UI Design: <strong>Snehal</strong> |
+      HTML: <strong>Chandni</strong> |
+      CSS: <strong>Aaditi</strong> |
+      JavaScript: <strong>Yash</strong>
+    </p>
+  </nav>
+
+  <!-- CALCULATOR -->
   <div class="calculator">
     <div class="display">
       <input type="text" id="result" readonly>
@@ -141,30 +56,7 @@
     </div>
   </div>
 
-  <!-- JavaScript -->
-  <script>
-    let result = document.getElementById("result");
-
-    function appendValue(value) {
-      result.value += value;
-    }
-
-    function clearDisplay() {
-      result.value = "";
-    }
-
-    function deleteLast() {
-      result.value = result.value.slice(0, -1);
-    }
-
-    function calculate() {
-      try {
-        result.value = eval(result.value);
-      } catch {
-        result.value = "Error";
-      }
-    }
-  </script>
-
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
 </body>
 </html>
